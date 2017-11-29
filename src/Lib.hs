@@ -123,6 +123,9 @@ someFunc = do
       putStrLn "Starting Node as Manager"
       backend <- initializeBackend host port rtable
       startMaster backend $ \workers -> do
+	  
+		time()
+	  
         result <- manager (read n) workers
         liftIO $ print result
     ["worker", host, port] -> do
