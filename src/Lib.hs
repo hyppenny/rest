@@ -124,7 +124,7 @@ someFunc = do
       backend <- initializeBackend host port rtable
       startMaster backend $ \workers -> do
 	  
-		time()
+		argon
 	  
         result <- manager (read n) workers
         liftIO $ print result
