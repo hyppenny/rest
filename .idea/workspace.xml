@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca86d28f-39d3-451d-81a7-15099374d117" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
-    <list id="23f63c8f-51f5-4502-b9d4-22c661b14745" name="tried last tutorial, grasp sth, start doing work" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Setup.hs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Main.hs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Lib.hs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PrimeFactors.hs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stack.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Spec.hs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/use-cloudhaskell.cabal" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master.py" afterPath="$PROJECT_DIR$/master.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slave.py" afterPath="$PROJECT_DIR$/slave.py" />
     </list>
+    <list id="23f63c8f-51f5-4502-b9d4-22c661b14745" name="tried last tutorial, grasp sth, start doing work" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/master.py" ignored="true" />
-    <file path="$PROJECT_DIR$/slave.py" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +19,8 @@
       <file leaf-file-name="master.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/master.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+            <state relative-caret-position="336">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -45,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/slave.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -224,15 +211,15 @@
     <entry file="file://$PROJECT_DIR$/slave.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/master.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
