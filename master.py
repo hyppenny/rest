@@ -14,19 +14,21 @@ class master():
                             "Press enter use default(python/core-workflow)\n"
                             "Input the repository you want to calculate:")
         if len(repoAddress) == 0:
-            print("!!!")
             repoAddress = "python/core-workflow"
 
+        self.getCommit(repoAddress)
+
+    def getCommit(self, repoAddress):
         githubData = []
         page = 1
         end = False
         while not end:
-            request = requests.get("https://api.github.com/repos/{}/commits?page={}&per_page=100".format(repoAddress,page))
+            request = requests.get(
+                "https://api.github.com/repos/{}/commits?page={}&per_page=100".format(repoAddress, page))
             githubData += json.loads(request.text)
             if len(githubData) < page * 100:
                 end = True
             page += 1
-        # print(githubData)
         for g in githubData:
             self.repoCommits.append(g['sha'])
             print(g['sha'])
@@ -45,7 +47,21 @@ class Hello(Resource):
         print(r.parse_args()['post'])
 
 
+class distributeCommit(Resource):
+    def __init__(self):
+        pass
+
+    def get(self):
+        return "work to do, get up!"
+
+    def post(self):
+        r = reqparse.RequestParser()
+        r.add_argument('post', type=str, location='json')
+        print(r.parse_args()['post'])
+
+
 api.add_resource(Hello, '/hello')
+api.add_resource(distributeCommit, '/commit')
 
 if __name__ == '__main__':
     m = master()
