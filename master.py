@@ -53,7 +53,7 @@ class distributeCommit(Resource):
     def get(self):
         self.master = m
         self.req = reqparse.RequestParser()
-        self.req.add_argument('pull',type=int, location='json')
+        self.req.add_argument('pull', type=int, location='json')
         args = self.req.parse_args()
         if args['pull'] == False:
             print("!!")
