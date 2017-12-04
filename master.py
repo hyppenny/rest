@@ -10,13 +10,15 @@ class master():
     def __init__(self):
         self.repoCommits = []
         self.repoCommitsCount = 0
-        repoAddress = input("Repository address as formate(user/repostory)\n"
-                            "Press enter use default(python/core-workflow)\n"
-                            "Input the repository you want to calculate:")
-        if len(repoAddress) == 0:
-            repoAddress = "python/core-workflow"
+        self.slaveNum = int(input("Number of slave needed:"))
+        self.currSlaveNum = 0
+        self.repoAddress = input("\nRepository address as formate(user/repostory)\n"
+                                 "Press enter use default(python/core-workflow)\n"
+                                 "Input the repository you want to calculate:")
+        if len(self.repoAddress) == 0:
+            self.repoAddress = "python/core-workflow"
 
-        self.getCommit(repoAddress)
+        self.getCommit(self.repoAddress)
 
     def getCommit(self, repoAddress):
         githubData = []
@@ -48,11 +50,17 @@ class Hello(Resource):
 
 
 class distributeCommit(Resource):
-    def __init__(self):
-        pass
-
     def get(self):
-        return "work to do, get up!"
+        self.master = m
+        self.req = reqparse.RequestParser()
+        self.req.add_argument('pull',type=int, location='json')
+        args = self.req.parse_args()
+        if args['pull'] == False:
+            print("!!")
+            return {'repo': "https://github.com/{}".format(self.master.repoAddress)}
+        if args['pull'] == True:
+            self.master.currSlaveNum += 1
+            print("Current slave number: {}".format(self.master.currSlaveNum))
 
     def post(self):
         r = reqparse.RequestParser()
