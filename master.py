@@ -44,12 +44,14 @@ class master():
 
 
 class calculateCC(Resource):
-    def get(self):
+    def __init__(self):
         self.master = m
         self.reqparser = reqparse.RequestParser()
 
         self.reqparser.add_argument('commit', type=str, location='json')
         self.reqparser.add_argument('complexity', type=str, location='json')
+
+    def get(self):
         if self.master.currSlaveNum < self.master.slaveNum:
             sleep(0.1)
             return {'sha': 1}
@@ -61,12 +63,9 @@ class calculateCC(Resource):
         return {'sha': commitSha}
 
     def post(self):
-        self.master = m
-        self.reqparser = reqparse.RequestParser()
-
-        self.reqparser.add_argument('commit', type=str, location='json')
-        self.reqparser.add_argument('complexity', type=str, location='json')
+        # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1")
         args = self.reqparser.parse_args()
+        print(args)
         self.master.repoCCs.append({'sha': args['commit'], 'complexity': args['complexity']})
         if len(self.master.repoCCs) == self.master.repoCommitsCount:
             endTime = time() - self.master.startTime
@@ -95,6 +94,8 @@ class sendUrl(Resource):
             return {'repo': "https://github.com/{}".format(self.master.repoAddress)}
         if args['pull'] == True:
             self.master.currSlaveNum += 1
+            if self.master.currSlaveNum == self.master.slaveNum:
+                self.master.startTime = time()
             print("Current slave number: {}".format(self.master.currSlaveNum))
 
     def post(self):
@@ -108,4 +109,4 @@ api.add_resource(sendUrl, '/url')
 
 if __name__ == '__main__':
     m = master()
-    app.run(port=5000)
+    app.run(port=6666)
