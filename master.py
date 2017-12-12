@@ -1,5 +1,4 @@
 from time import sleep, time
-
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 import requests, json
@@ -17,10 +16,10 @@ class master():
         self.startTime = 0
         self.repoCCs = []
         self.repoAddress = input("\nRepository address as formate(user/repostory)\n"
-                                 "Press enter use default(python/core-workflow)\n"
+                                 "Press enter use default(google/python-fire)\n"
                                  "Input the repository you want to calculate:")
         if len(self.repoAddress) == 0:
-            self.repoAddress = "python/core-workflow"
+            self.repoAddress = "google/python-fire"
 
         self.getCommit(self.repoAddress)
 

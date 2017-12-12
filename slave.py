@@ -30,7 +30,7 @@ def run():
         hashsha = json_data['sha']
         print("Received: {}".format(hashsha))
         if hashsha == 1:
-            print("Waiting for enough workers...")
+            print("Waiting for enough slaves...")
         else:
             if hashsha == 0:
                 print("No commit left")
@@ -44,8 +44,7 @@ def run():
 
             command_output = subprocess.check_output(["radon", "cc", "-s", "-a", "repo"]).decode()
             print(command_output)
-
-            if command_output[command_output.rfind('(') + 1:-2] == "":
+            if command_output.find("ERROR") != -1 or command_output[command_output.rfind('(') + 1:-2] == "":
                 print("NO RELEVENT FILES")
                 r = requests.post("http://localhost:6666/calculate",
                                   json={'commit': hashsha, 'complexity': -1})
